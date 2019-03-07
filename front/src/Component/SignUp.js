@@ -1,58 +1,60 @@
 import React, { Component } from 'react';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
+// import { Button } from 'semantic-ui-react'
 
 class SignUp extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            mail: "Renseigner votre email",
-            name: "Renseigner votre Prénom",
-            lastName: "Renseigner votre nom",
-            password: "Renseigner votre mot de passe",
-            verifPassword: "Renseigner votre mot de passe",
-        }
+        // this.state = {
+        //     mail: "Renseigner votre email",
+        //     name: "Renseigner votre Prénom",
+        //     lastName: "Renseigner votre nom",
+        //     password: "Renseigner votre mot de passe",
+        //     verifPassword: "Renseigner votre mot de passe",
+        // }
 
         console.log(this.state);
     }
-    updateEmailField = () => {
+    // updateEmailField = () => {
 
 
-            const inputMail= document.getElementById('emailId').value;
-            const inputName = document.getElementById('nameId').value;
-            const inputLastName = document.getElementById('lastnameId').value;
-            const inputPassword = document.getElementById('passwordId').value;
-            const inputVerifPassword = document.getElementById('verifpasswordId').value;
+    //         const inputMail= document.getElementById('emailId').value;
+    //         const inputName = document.getElementById('nameId').value;
+    //         const inputLastName = document.getElementById('lastnameId').value;
+    //         const inputPassword = document.getElementById('passwordId').value;
+    //         const inputVerifPassword = document.getElementById('verifpasswordId').value;
        
 
-        if (inputPassword !== inputVerifPassword) {
+    //     if (inputPassword !== inputVerifPassword) {
             
-            console.log("test comparaison");
+    //         console.log("test comparaison");
             
 
-            Swal.fire({
-                type: "error",
-                title: "Oops...",
-                text: "Mauvais mot de passe"
-            })
-        }
-        else{
-            this.setState({
-                mail: inputMail,
-                name: inputName,
-                lastName: inputLastName,
-                password: inputPassword,
-                verifPassword: inputVerifPassword
-            });
-        }
-    }
+    //         Swal.fire({
+    //             type: "error",
+    //             title: "Oops...",
+    //             text: "Mauvais mot de passe"
+    //         })
+    //     }
+    //     else{
+    //         this.setState({
+    //             mail: inputMail,
+    //             name: inputName,
+    //             lastName: inputLastName,
+    //             password: inputPassword,
+    //             verifPassword: inputVerifPassword
+    //         });
+    //     }
+    // }
     render() {
 
        
 
         console.log("test json", JSON.stringify(this.state));
+
         return (
             <div>
-
+            <form action="http://192.168.16.237:5000/signup" method="post">
                 <h1 className="inputname"> Renseigner votre prénom</h1>
                 <input className="inputlastname" type="text" name="name" id="nameId" />
 
@@ -66,15 +68,16 @@ class SignUp extends Component {
                 <input className="inputPassword" type="text" name="password" id="passwordId" />
 
                 <h1 className="inputverifPassword">verif-Password</h1>
-                <input className="inputverifPassword" type="text" name="verifpasswordId" id ="verifpasswordId" /><br />
+                <input className="inputverifPassword" type="text" name="verifpassword" id ="verifpasswordId" /><br />
 
 
-                <button type="submit" onClick={this.updateEmailField}>Soumettre</button>
-
+                <button type="submit" >Soumettre</button>
+                
 
                 <h1>{JSON.stringify(this.state)}</h1>
                
-
+            </form>
+           
 
             </div>
         )
