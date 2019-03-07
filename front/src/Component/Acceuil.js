@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import SignUp from './SignUp';
 import LogIn from './LogIn'
+import { Form, Segment, Button} from 'semantic-ui-react';
+
 
 
 class Acceuil extends Component {
@@ -26,9 +28,15 @@ class Acceuil extends Component {
             return <LogIn/>
         }
         return(
-            <div>
-                <input className="button1" type="button" value="Sign'in" onClick ={this.goSignIn}></input>
-                <input className="button2" type="button" value="Log'in" onClick={this.gologIn}></input>
+            <div className = "test">
+                <Form group>
+                <h1>BIENVENUE CHEZ LES VIOKS</h1>
+                <div className= "button1">
+                <Button  circular  size = "massive" value="Sign'in" onClick ={this.goSignIn}>Inscription</Button>
+                <Form.Group/>
+                <Button circular border="blue" size = "massive" value="Log'in" onClick={this.gologIn}> Connexion</Button>
+                </div>
+                </Form>
             </div>
         )
     }

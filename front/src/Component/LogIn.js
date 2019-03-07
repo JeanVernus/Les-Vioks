@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Form, Segment, Button} from 'semantic-ui-react';
 
 class LogIn extends Component {
     constructor(props){
@@ -9,16 +10,18 @@ class LogIn extends Component {
     render(){
         return(
             <div>
-            <form action="http://192.168.16.237:5000/signup" method="post">
+                <Segment inverted>
+            <Form inverted  action="http://192.168.16.237:5000/signup" method="post">
 
-                <h1 className="inputPseudo">Renseigner votre nom</h1>
-                <input className="inputPseudo" type="text" name="lastname" id="lastnameId" />
+               
+                <Form.Input fluid label = "Pseudo" className="inputPseudo" type="text" name="lastname" id="lastnameId" />
 
-                <h1 className="inputverifPassword">Password</h1>
-                <input className="inputverifPassword" type="text" name="password" id ="passwordId" /><br />
+               
+                <Form.Input fluid label = "Password" className="inputverifPassword" type="text" name="password" id ="passwordId" /><br />
 
-                <button type="submit" >Soumettre</button>
-            </form>
+                <Button type="submit" >Soumettre</Button>
+            </Form>
+            </Segment>
             </div>
         )
     }
