@@ -5,47 +5,13 @@ import React, { Component } from 'react';
 class SignUp extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     mail: "Renseigner votre email",
-        //     name: "Renseigner votre Prénom",
-        //     lastName: "Renseigner votre nom",
-        //     password: "Renseigner votre mot de passe",
-        //     verifPassword: "Renseigner votre mot de passe",
-        // }
+        this.state = {
+        
+        }
 
         console.log(this.state);
     }
-    // updateEmailField = () => {
-
-
-    //         const inputMail= document.getElementById('emailId').value;
-    //         const inputName = document.getElementById('nameId').value;
-    //         const inputLastName = document.getElementById('lastnameId').value;
-    //         const inputPassword = document.getElementById('passwordId').value;
-    //         const inputVerifPassword = document.getElementById('verifpasswordId').value;
-       
-
-    //     if (inputPassword !== inputVerifPassword) {
-            
-    //         console.log("test comparaison");
-            
-
-    //         Swal.fire({
-    //             type: "error",
-    //             title: "Oops...",
-    //             text: "Mauvais mot de passe"
-    //         })
-    //     }
-    //     else{
-    //         this.setState({
-    //             mail: inputMail,
-    //             name: inputName,
-    //             lastName: inputLastName,
-    //             password: inputPassword,
-    //             verifPassword: inputVerifPassword
-    //         });
-    //     }
-    // }
+    
     render() {
 
        
@@ -56,25 +22,25 @@ class SignUp extends Component {
             <div>
             <form action="http://192.168.16.237:5000/signup" method="post">
                 <h1 className="inputname"> Renseigner votre prénom</h1>
-                <input className="inputlastname" type="text" name="name" id="nameId" />
+                <input className="inputlastname" type="text" name="name"  />
 
                 <h1 className="inputPseudo">Renseigner votre nom</h1>
-                <input className="inputPseudo" type="text" name="lastname" id="lastnameId" />
+                <input className="inputPseudo" type="text" name="lastname"  />
 
                 <h1 className="inputMail">renseigner votre mail</h1>
-                <input className="inputMail" type="email" name="email" id="emailId" />
+                <input className="inputMail" type="email" name="email"  />
 
                 <h1 className="inputPassword">password</h1>
-                <input className="inputPassword" type="text" name="password" id="passwordId" />
+                <input className="inputPassword" type="text" name="password" />
 
                 <h1 className="inputverifPassword">verif-Password</h1>
-                <input className="inputverifPassword" type="text" name="verifpassword" id ="verifpasswordId" /><br />
+                <input className="inputverifPassword" type="text" name="verifpassword" /><br />
 
 
                 <button type="submit" >Soumettre</button>
                 
 
-                <h1>{JSON.stringify(this.state)}</h1>
+                {/* <h1>{JSON.stringify(this.state)}</h1> */}
                
             </form>
            
